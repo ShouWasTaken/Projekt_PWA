@@ -26,11 +26,15 @@ function outsideClickRegistration(e) {
 function displayWelcomeMessage() {
   const nameInput = document.getElementById('name');
   const name = nameInput.value;
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
   welcomeMessage.textContent = `Witaj, ${name}!`;
   registrationButton.style.display = 'none';
   logoutButton.style.display = 'inline-block';
   modalRegistration.style.display = 'none';
   nameInput.value = '';
+  emailInput.value = '';
+  passwordInput.value = '';
 }
 
 function logout() {
