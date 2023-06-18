@@ -1,11 +1,13 @@
-
 const registrationButton = document.getElementById('registration-button');
+const logoutButton = document.getElementById('logout-button');
 const modalRegistration = document.getElementById('registerModal');
 const closeRegistration = document.querySelector('.modal-content .close');
+const welcomeMessage = document.getElementById('welcome-message');
 
 registrationButton.addEventListener('click', openRegistrationModal);
 closeRegistration.addEventListener('click', closeRegistrationModal);
 window.addEventListener('click', outsideClickRegistration);
+logoutButton.addEventListener('click', logout);
 
 function openRegistrationModal() {
   modalRegistration.style.display = 'block';
@@ -21,20 +23,38 @@ function outsideClickRegistration(e) {
   }
 }
 
+function displayWelcomeMessage() {
+  const nameInput = document.getElementById('name');
+  const name = nameInput.value;
+  welcomeMessage.textContent = `Witaj, ${name}!`;
+  registrationButton.style.display = 'none';
+  logoutButton.style.display = 'inline-block';
+  modalRegistration.style.display = 'none';
+  nameInput.value = '';
+}
+
+function logout() {
+  welcomeMessage.textContent = '';
+  registrationButton.style.display = 'inline-block';
+  logoutButton.style.display = 'none';
+}
+
+const registrationForm = document.querySelector('#registerModal form');
+registrationForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  displayWelcomeMessage();
+});
+
+
 const weatherButton = document.getElementById('weather-button');
 const modalWeather = document.getElementById('weatherModal');
-const closeWeather = document.querySelectorAll('.weather-check .close')[0];
+const closeWeather = document.querySelector('.modal-content .close');
 
 weatherButton.addEventListener('click', openWeatherModal);
-closeWeather.addEventListener('click', closeWeatherModal);
 window.addEventListener('click', outsideClickWeather);
 
 function openWeatherModal() {
   modalWeather.style.display = 'block';
-}
-
-function closeWeatherModal() {
-  modalWeather.style.display = 'none';
 }
 
 function outsideClickWeather(e) {
@@ -44,12 +64,12 @@ function outsideClickWeather(e) {
 }
 
 
-const input = document.querySelector('input');
-const button = document.getElementById('weatherButton');
+const input = document.getElementById('miasto');
+const button = document.getElementById('check');
 const errorMessage = document.querySelector('.error')
 const date = document.querySelector('.date');
 const cityName = document.querySelector('.city_name');
-const img = document.querySelector('img');
+const img = document.getElementById('obrazekpogodowy');
 const temperature = document.querySelector('.temperature');
 const temperatureDescription = document.querySelector('.temperature_description');
 const feelsLike = document.querySelector('.feels_like');

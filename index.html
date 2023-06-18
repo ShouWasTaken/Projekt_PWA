@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aplikacja PWA</title>
+  <title>Legendy JPN motoryzacji</title>
 
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#9013fe">
@@ -18,7 +18,9 @@
         <h2>Przybliżamy legendy z kraju kwitnącej wiśni</h2>
     </div>
     <a href="#main">Czytaj więcej</a>
+    <p id="welcome-message"></p>
     <button id="registration-button">Rejestracja</button>
+    <button id="logout-button" style="display: none;">Wyloguj</button>
     <button id="weather-button">Sprawdź pogodę</button>
   </header>
 
@@ -47,10 +49,7 @@
     </div>
     </section>
 
-    <section class="weather-check">
-      <h2>Sprawdź pogodę</h2>
-      <button id="weatherModalBtn">Sprawdź pogodę</button>
-    </section>
+
   </main>
 
   <footer>
@@ -79,26 +78,28 @@
 
   <div id="weatherModal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Sprawdź pogodę</h2>
-      <input type="text" id="city" name="city" placeholder="Wpisz nazwę miasta" required>
-        <button id="weatherButton">Sprawdź</button>
-        <p class="date"></p>
-        <h2 class="city_name"></h2>
-        <div class="weather box">
-            <div>
-                <img src="" alt="">
-                <p class="temperature"></p>
+        <section class="app_top">
+            <input type="text" id="miasto" placeholder="podaj nazwę miasta">
+            <button id="check">Sprawdź pogodę!</button>
+        </section>
+        <section class="app_bottom">
+            <p class="date"></p>
+            <h2 class="city_name"></h2>
+            <div class="weather box">
+                <div>
+                    <img id="obrazekpogodowy" src="" alt="">
+                    <p class="temperature"></p>
+                </div>
+                <p class="temperature_description"></p>
             </div>
-            <p class="temperature_description"></p>
-        </div>
-        <p>Temperatura odczuwalna: <span class="feels_like"></span></p>
-        <p>Cisnienie: <span class="pressure"></span></p>
-        <p>Wilgotność powietrza: <span class="humidity"></span></p>
-        <p>Prędkość wiatru:  <span class="wind_speed"></span></p>
-        <p>Zachmurzenie:  <span class="clouds"></span></p>
+            <p>Temperatura odczuwalna: <span class="feels_like"></span></p>
+            <p>Cisnienie: <span class="pressure"></span></p>
+            <p>Wilgotność powietrza: <span class="humidity"></span></p>
+            <p>Prędkość wiatru:  <span class="wind_speed"></span></p>
+            <p>Zachmurzenie:  <span class="clouds"></span></p>
+        </section>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
