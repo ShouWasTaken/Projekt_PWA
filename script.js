@@ -1,8 +1,8 @@
 const registrationButton = document.getElementById('registration-button');
 const welcomeMessage = document.getElementById('welcome-message');
 const logoutButton = document.getElementById('logout-button');
-const modalRegistration = document.getElementById('registerModal');
-const closeRegistration = document.querySelector('.modal-content .close');
+const modalRegistration = document.getElementById('registration-modal');
+const closeRegistration = document.getElementById('close-registration-modal');
 
 registrationButton.addEventListener('click', openRegistrationModal);
 closeRegistration.addEventListener('click', closeRegistrationModal);
@@ -17,8 +17,8 @@ function closeRegistrationModal() {
 
 function register(event) {
   event.preventDefault();
- 
-  const nameInput = document.getElementById('name');
+
+  const nameInput = document.getElementById('username');
   const emailInput = document.getElementById('email');
   const passwordInput = document.getElementById('password');
 
@@ -38,8 +38,8 @@ function register(event) {
 
 
 const weatherButton = document.getElementById('weather-button');
-const modalWeather = document.getElementById('weatherModal');
-const closeWeather = document.querySelector('.modal-content .close');
+const modalWeather = document.getElementById('modal');
+const closeWeather = document.getElementById('close-modal');
 
 weatherButton.addEventListener('click', openWeatherModal);
 closeWeather.addEventListener('click', closeWeatherModal);
@@ -58,7 +58,6 @@ function outsideClickWeather(e) {
   }
 }
 
-
 registrationButton.addEventListener('click', openRegistrationModal);
 logoutButton.addEventListener('click', logout);
 
@@ -68,19 +67,16 @@ function logout() {
   logoutButton.classList.add('hidden');
 }
 
-
-const closeModalButtons = document.querySelectorAll('#registerModal .close');
+const closeModalButtons = document.querySelectorAll('#registration-modal .close');
 
 for (let i = 0; i < closeModalButtons.length; i++) {
   closeModalButtons[i].addEventListener('click', closeRegistrationModal);
 }
 
-
 const registerForm = document.getElementById('registerForm');
 registerForm.addEventListener('submit', register);
 
-
-const closeWeatherButtons = document.querySelectorAll('#weatherModal .close');
+const closeWeatherButtons = document.querySelectorAll('#modal .close');
 
 for (let i = 0; i < closeWeatherButtons.length; i++) {
   closeWeatherButtons[i].addEventListener('click', closeWeatherModal);
