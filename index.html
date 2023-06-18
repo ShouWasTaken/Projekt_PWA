@@ -21,7 +21,7 @@
     <button id="registration-button">Rejestracja</button>
     <button id="weather-button">Sprawdź pogodę</button>
     <span id="welcome-message" class="hidden"></span>
-  <button id="logout-button" class="hidden">Wyloguj</button>
+    <button id="logout-button" class="hidden">Wyloguj</button>
   </header>
 
   <main id="main">
@@ -51,57 +51,49 @@
 
     <section class="weather-check">
       <h2>Sprawdź pogodę</h2>
-      <button id="weather-button">Sprawdź pogodę</button>
+      <button id="weather-button-modal">Sprawdź pogodę</button>
     </section>
   </main>
 
   <footer>
-    <p>Zaawansowane technologie internetowe - WSB project</p>
+    <p>Zaawansowane technologie w motoryzacji</p>
+    <p>&copy; 2023 Japońska Motoryzacja. Wszelkie prawa zastrzeżone.</p>
   </footer>
 
-  <div class="enlarged_image_container">
-    <img class="enlarged_image" src="" alt="">
+  <div id="modal">
+    <div id="modal-content">
+      <span id="close-modal">&times;</span>
+      <h3>Sprawdź pogodę</h3>
+      <form id="weatherForm">
+        <label for="city">Miasto:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Sprawdź</button>
+      </form>
+      <div id="weather-info" class="hidden">
+        <p id="location"></p>
+        <p id="temperature"></p>
+        <p id="description"></p>
+      </div>
+    </div>
   </div>
 
-  <div id="registerModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Rejestracja</h2>
-      <form>
-        <label for="name">Imię:</label>
-        <input type="text" id="name" name="name" required>
+  <div id="registration-modal">
+    <div id="registration-modal-content">
+      <span id="close-registration-modal">&times;</span>
+      <h3>Rejestracja</h3>
+      <form id="registerForm">
+        <label for="username">Nazwa użytkownika:</label>
+        <input type="text" id="username" name="username" required>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
         <label for="password">Hasło:</label>
         <input type="password" id="password" name="password" required>
         <button type="submit">Zarejestruj</button>
-    </form>
+      </form>
+      <p id="registration-message" class="hidden"></p>
     </div>
   </div>
-
-  <div id="weatherModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Sprawdź pogodę</h2>
-      <input type="text" id="city" name="city" placeholder="Wpisz nazwę miasta" required>
-      <button id="weather-button">Sprawdź</button>
-      <p class="date"></p>
-            <h2 class="city_name"></h2>
-            <div class="weather box">
-                <div>
-                    <img src="" alt="">
-                    <p class="temperature"></p>
-                </div>
-                <p class="temperature_description"></p>
-            </div>
-            <p>Temperatura odczuwalna: <span class="feels_like"></span></p>
-            <p>Cisnienie: <span class="pressure"></span></p>
-            <p>Wilgotność powietrza: <span class="humidity"></span></p>
-            <p>Prędkość wiatru:  <span class="wind_speed"></span></p>
-            <p>Zachmurzenie:  <span class="clouds"></span></p>
-  </div>
-  <script src="hhttps://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-  <script src="sw.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

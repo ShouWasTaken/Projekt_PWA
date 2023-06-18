@@ -17,7 +17,7 @@ function closeRegistrationModal() {
 
 function register(event) {
   event.preventDefault();
-
+ 
   const nameInput = document.getElementById('name');
   const emailInput = document.getElementById('email');
   const passwordInput = document.getElementById('password');
@@ -39,7 +39,7 @@ function register(event) {
 
 const weatherButton = document.getElementById('weather-button');
 const modalWeather = document.getElementById('weatherModal');
-const closeWeather = document.querySelectorAll('.weather-check .close')[1];
+const closeWeather = document.querySelector('.modal-content .close');
 
 weatherButton.addEventListener('click', openWeatherModal);
 closeWeather.addEventListener('click', closeWeatherModal);
@@ -71,16 +71,24 @@ function logout() {
 
 const closeModalButtons = document.querySelectorAll('#registerModal .close');
 
-for (var i = 0; i < closeModalButtons.length; i++) {
+for (let i = 0; i < closeModalButtons.length; i++) {
   closeModalButtons[i].addEventListener('click', closeRegistrationModal);
 }
 
 
 const registerForm = document.getElementById('registerForm');
-const weatherForm = document.getElementById('weatherForm');
-
 registerForm.addEventListener('submit', register);
-weatherForm.addEventListener('submit', getWeather);
+
+
+const closeWeatherButtons = document.querySelectorAll('#weatherModal .close');
+
+for (let i = 0; i < closeWeatherButtons.length; i++) {
+  closeWeatherButtons[i].addEventListener('click', closeWeatherModal);
+}
+
+window.addEventListener('click', outsideClickWeather);
+
+
 
 
 const input = document.querySelector('input');
@@ -142,10 +150,4 @@ input.addEventListener('keypress', getWeatherByEnter)
 button.addEventListener('click', getWeather);
 
 
-const closeWeatherButtons = document.querySelectorAll('#weatherModal .close');
 
-for (var i = 0; i < closeWeatherButtons.length; i++) {
-  closeWeatherButtons[i].addEventListener('click', closeWeatherModal);
-}
-
-window.addEventListener('click', outsideClickWeather);
