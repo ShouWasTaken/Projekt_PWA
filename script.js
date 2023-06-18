@@ -45,7 +45,7 @@ function outsideClickWeather(e) {
 
 
 const input = document.querySelector('input');
-const button = document.querySelector('button');
+const button = document.getElementById('weatherButton');
 const errorMessage = document.querySelector('.error')
 const date = document.querySelector('.date');
 const cityName = document.querySelector('.city_name');
