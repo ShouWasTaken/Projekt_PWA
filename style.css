@@ -1,9 +1,11 @@
+/* Resetowanie stylów domyślnych */
 body, h1, h2, h3, p, button {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 }
 
+/* Globalne style */
 body {
   background-color: #f2f2f2;
   color: #333;
@@ -102,6 +104,7 @@ footer {
   color: #fff;
 }
 
+/* Style dla modala */
 .modal {
   display: none;
   position: fixed;
@@ -155,8 +158,4 @@ footer {
   margin: 5% auto;
   max-width: 80%;
   max-height: 80%;
-}
-
-.hidden {
-  display: none;
 }

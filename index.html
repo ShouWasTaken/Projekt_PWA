@@ -14,84 +14,89 @@
 <body>
   <header>
     <div>
-      <h1>Japońska Motoryzacja</h1>
-      <h2>Przybliżamy legendy z kraju kwitnącej wiśni</h2>
+      <h1>Przewodnik po Hawajach</h1>
+      <h2>Wyjedź z nami w podróż</h2>
     </div>
     <a href="#main">Czytaj więcej</a>
-    <button id="registration-button">Rejestracja</button>
-    <button id="weather-button">Sprawdź pogodę</button>
-    <span id="welcome-message" class="hidden"></span>
-    <button id="logout-button" class="hidden">Wyloguj</button>
+    <button id="registerBtn">Rejestracja</button>
+    <button id="weatherBtn">Sprawdź pogodę</button>
   </header>
 
   <main id="main">
     <section class="all_cars">
       <h2>Legendarne samochody z Japonii</h2>
       <div class="single_car">
-        <h3>Nissan Skyline GT-R</h3>
-        <img src="./img/nissan_gtr.jpg" alt="">
-        <p>Nissan GT-R, znany również jako "Godzilla", to flagowy samochód sportowy marki Nissan. Posiada niezwykłą moc i osiągi, zapewniając niesamowite doznania podczas jazdy.</p>
-      </div>
-      <div class="single_car">
         <h3>Toyota Supra</h3>
         <img src="./img/toyota_supra.jpg" alt="">
         <p>Toyota Supra to kultowy sportowy samochód produkowany przez japońską firmę Toyota. Zyskał ogromną popularność dzięki swojemu wyglądowi i osiągom.</p>
-      </div>
-      <div class="single_car">
+    </div>
+    <div class="single_car">
+        <h3>Nissan GT-R</h3>
+        <img src="./img/nissan_gtr.jpg" alt="">
+        <p>Nissan GT-R, znany również jako "Godzilla", to flagowy samochód sportowy marki Nissan. Posiada niezwykłą moc i osiągi, zapewniając niesamowite doznania podczas jazdy.</p>
+    </div>
+    <div class="single_car">
         <h3>Mazda RX-7</h3>
         <img src="./img/mazda_rx7.jpg" alt="">
         <p>Mazda RX-7 to ikona japońskiej motoryzacji. Charakteryzuje się unikalnym silnikiem rotacyjnym i dynamicznym designem.</p>
-      </div>
-      <div class="single_car">
+    </div>
+    <div class="single_car">
         <h3>Honda NSX</h3>
         <img src="./img/honda_nsx.jpg" alt="">
         <p>Honda NSX, nazywana również Acura NSX na niektórych rynkach, to supersamochód produkowany przez japońską markę Honda. Połączenie osiągów, technologii i stylu.</p>
-      </div>
+    </div>
     </section>
 
     <section class="weather-check">
       <h2>Sprawdź pogodę</h2>
-      <button id="weather-button-modal">Sprawdź pogodę</button>
+      <button id="weatherModalBtn">Sprawdź pogodę</button>
     </section>
   </main>
 
   <footer>
-    <p>Zaawansowane technologie w motoryzacji</p>
-    <p>&copy; 2023 Japońska Motoryzacja. Wszelkie prawa zastrzeżone.</p>
+    <p>Zaawansowane technologie internetowe - WSB project</p>
   </footer>
 
-  <div id="modal">
-    <div id="modal-content">
-      <span id="close-modal">&times;</span>
-      <h3>Sprawdź pogodę</h3>
-      <form id="weatherForm">
-        <label for="city">Miasto:</label>
-        <input type="text" id="city" name="city" required>
-        <button type="submit">Sprawdź</button>
-      </form>
-      <div id="weather-info" class="hidden">
-        <p id="location"></p>
-        <p id="temperature"></p>
-        <p id="description"></p>
-      </div>
-    </div>
+  <div class="enlarged_image_container">
+    <img class="enlarged_image" src="" alt="">
   </div>
 
-  <div id="registration-modal">
-    <div id="registration-modal-content">
-      <span id="close-registration-modal">&times;</span>
-      <h3>Rejestracja</h3>
-      <form id="registerForm">
-        <label for="username">Nazwa użytkownika:</label>
-        <input type="text" id="username" name="username" required>
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Rejestracja</h2>
+      <form>
+        <label for="name">Imię:</label>
+        <input type="text" id="name" name="name" required>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
         <label for="password">Hasło:</label>
         <input type="password" id="password" name="password" required>
         <button type="submit">Zarejestruj</button>
-      </form>
-      <p id="registration-message" class="hidden"></p>
+    </form>
     </div>
+  </div>
+
+  <div id="weatherModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Sprawdź pogodę</h2>
+      <input type="text" id="city" name="city" placeholder="Wpisz nazwę miasta" required>
+        <button id="weatherButton">Sprawdź</button>
+        <p class="date"></p>
+        <h2 class="city_name"></h2>
+        <div class="weather box">
+            <div>
+                <img src="" alt="">
+                <p class="temperature"></p>
+            </div>
+            <p class="temperature_description"></p>
+        </div>
+        <p>Temperatura odczuwalna: <span class="feels_like"></span></p>
+        <p>Cisnienie: <span class="pressure"></span></p>
+        <p>Wilgotność powietrza: <span class="humidity"></span></p>
+        <p>Prędkość wiatru:  <span class="wind_speed"></span></p>
+        <p>Zachmurzenie:  <span class="clouds"></span></p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <script src="script.js"></script>
