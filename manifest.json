@@ -1,0 +1,31 @@
+{
+    "theme_color": "#cf35f6",
+    "background_color": "#3551f6",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/Projekt/PWA/",
+    "name": "JapaneseLegends",
+    "short_name": "JapGoats",
+    "icons": [
+        {
+            "src": "./img/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
