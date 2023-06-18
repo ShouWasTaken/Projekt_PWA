@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japońska motoryzacja</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#9013fe">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Japońska motoryzacja</h1>
+            <h2>Przybliżamy legendy z kraju kwitnącej wiśni</h2>
+        </div>
+        <a href="#main">Czytaj więcej</a>
+        <a href="#register">Rejestracja</a>
+        <a href="#weather">Sprawdź pogodę</a>
+    </header>
+    <main id="main">
+        <section class="all_cars">
+            <h2>Legendy japońskiej motoryzacji</h2>
+            <div>
+                <div class="single_car">
+                    <h3>Toyota Supra</h3>
+                    <img src="./img/toyota_supra.jpg" alt="">
+                    <p>Toyota Supra to kultowy sportowy samochód produkowany przez japońską firmę Toyota. Zyskał ogromną popularność dzięki swojemu wyglądowi i osiągom.</p>
+                </div>
+                <div class="single_car">
+                    <h3>Nissan GT-R</h3>
+                    <img src="./img/nissan_gtr.jpg" alt="">
+                    <p>Nissan GT-R, znany również jako "Godzilla", to flagowy samochód sportowy marki Nissan. Posiada niezwykłą moc i osiągi, zapewniając niesamowite doznania podczas jazdy.</p>
+                </div>
+                <div class="single_car">
+                    <h3>Mazda RX-7</h3>
+                    <img src="./img/mazda_rx7.jpg" alt="">
+                    <p>Mazda RX-7 to ikona japońskiej motoryzacji. Charakteryzuje się unikalnym silnikiem rotacyjnym i dynamicznym designem.</p>
+                </div>
+                <div class="single_car">
+                    <h3>Honda NSX</h3>
+                    <img src="./img/honda_nsx.jpg" alt="">
+                    <p>Honda NSX, nazywana również Acura NSX na niektórych rynkach, to supersamochód produkowany przez japońską markę Honda. Połączenie osiągów, technologii i stylu.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section id="register">
+        <h2>Rejestracja</h2>
+        <form>
+            <label for="name">Imię:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Zarejestruj</button>
+        </form>
+    </section>
+    <section id="weather">
+        <h2>Sprawdź pogodę</h2>
+        <input type="text" id="city" name="city" placeholder="Wpisz nazwę miasta" required>
+        <button id="weatherButton">Sprawdź</button>
+        <p class="error"></p>
+        <div class="weatherInfo">
+            <p class="date"></p>
+            <p class="city_name"></p>
+            <img src="" alt="">
+            <p class="temperature"></p>
+            <p class="temperature_description"></p>
+            <p class="feels_like"></p>
+            <p class="pressure"></p>
+            <p class="humidity"></p>
+            <p class="wind_speed"></p>
+            <p class="clouds"></p>
+        </div>
+    </section>
+    <footer>
+        <p>Zaawansowane technologie internetowe - WSB project</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="sw.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
