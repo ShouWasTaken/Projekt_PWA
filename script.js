@@ -11,11 +11,25 @@ const pressure = document.querySelector('.pressure');
 const humidity = document.querySelector('.humidity');
 const windSpeed = document.querySelector('.wind_speed');
 const clouds = document.querySelector('.clouds');
+const allCars = document.querySelectorAll('.single_car img');
+const enlargedImageContainer = document.querySelector('.enlarged_image_container');
+const enlargedImage = document.querySelector('.enlarged_image');
 
 const apiLink = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const apiKey = '&appid=849361ccd38ac268f0c96aa68c6686ce';
 const apiUnits = '&units=metric';
 const apiLang = '&lang=pl';
+
+allCars.forEach(car => {
+  car.addEventListener('click', () => {
+    enlargedImage.src = car.src;
+    enlargedImageContainer.classList.add('show');
+  });
+});
+
+enlargedImageContainer.addEventListener('click', () => {
+  enlargedImageContainer.classList.remove('show');
+});
 
 function getWeather() {
   const apiCity = input.value;
@@ -55,6 +69,8 @@ function getWeatherByEnter(e) {
     getWeather();
   }
 }
+
+
 
 input.addEventListener('keypress', getWeatherByEnter);
 button.addEventListener('click', getWeather);
