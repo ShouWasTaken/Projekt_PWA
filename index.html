@@ -20,6 +20,8 @@
     <a href="#main">Czytaj więcej</a>
     <button id="registration-button">Rejestracja</button>
     <button id="weather-button">Sprawdź pogodę</button>
+    <span id="welcome-message" class="hidden"></span>
+  <button id="logout-button" class="hidden">Wyloguj</button>
   </header>
 
   <main id="main">
@@ -83,21 +85,22 @@
       <h2>Sprawdź pogodę</h2>
       <input type="text" id="city" name="city" placeholder="Wpisz nazwę miasta" required>
       <button id="weather-button">Sprawdź</button>
-      <p class="error"></p>
-      <div class="weatherInfo">
-          <p class="date"></p>
-          <p class="city_name"></p>
-          <img src="" alt="">
-          <p class="temperature"></p>
-          <p class="temperature_description"></p>
-          <p class="feels_like"></p>
-          <p class="pressure"></p>
-          <p class="humidity"></p>
-          <p class="wind_speed"></p>
-          <p class="clouds"></p>
-    </div>
+      <p class="date"></p>
+            <h2 class="city_name"></h2>
+            <div class="weather box">
+                <div>
+                    <img src="" alt="">
+                    <p class="temperature"></p>
+                </div>
+                <p class="temperature_description"></p>
+            </div>
+            <p>Temperatura odczuwalna: <span class="feels_like"></span></p>
+            <p>Cisnienie: <span class="pressure"></span></p>
+            <p>Wilgotność powietrza: <span class="humidity"></span></p>
+            <p>Prędkość wiatru:  <span class="wind_speed"></span></p>
+            <p>Zachmurzenie:  <span class="clouds"></span></p>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="hhttps://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <script src="sw.js"></script>
   <script src="script.js"></script>
 </body>
