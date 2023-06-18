@@ -1,6 +1,6 @@
 const registrationButton = document.getElementById('registration-button');
-const modalRegistration = document.getElementById('modal-registration');
-const closeRegistration = document.getElementById('close-registration');
+const modalRegistration = document.getElementById('registerModal');
+const closeRegistration = document.querySelector('.modal-content .close');
 
 registrationButton.addEventListener('click', openRegistrationModal);
 closeRegistration.addEventListener('click', closeRegistrationModal);
@@ -22,8 +22,8 @@ function outsideClickRegistration(e) {
 
 
 const weatherButton = document.getElementById('weather-button');
-const modalWeather = document.getElementById('modal-weather');
-const closeWeather = document.getElementById('close-weather');
+const modalWeather = document.getElementById('weatherModal');
+const closeWeather = document.querySelectorAll('.weather-check .close')[0];
 
 weatherButton.addEventListener('click', openWeatherModal);
 closeWeather.addEventListener('click', closeWeatherModal);
@@ -42,7 +42,6 @@ function outsideClickWeather(e) {
     modalWeather.style.display = 'none';
   }
 }
-
 
 const input = document.querySelector('input');
 const button = document.querySelector('button');
